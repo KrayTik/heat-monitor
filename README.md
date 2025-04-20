@@ -1,59 +1,97 @@
 # heat-monitor
 
-A simple command-line tool for checking your system's temperature on Linux.
+![Linux compatible](https://img.shields.io/badge/OS-Linux-informational?style=flat-square&logo=linux)
+![Python](https://img.shields.io/badge/Language-Python-blue?style=flat-square&logo=python)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-# FOR LINUX ONLY
+A simple, lightweight command-line utility written in Python to display your system's temperature readings on Linux.
 
-This python script can only run on Linux systems because the script is written for POSIX shells, and it relies on lm-sensors.
+## ✨ Features
 
-## Features
+* Get real-time CPU and other sensor temperatures.
+* Leverages the standard `lm-sensors` package for reliable hardware interaction.
+* Works seamlessly in any Linux shell (Bash, Zsh, Fish, etc.).
+* Minimal dependencies and fast execution.
 
-- Displays current system temperature
-- Uses `lm-sensors` for sensor data
-- Works with any shell (Fish, Bash, etc.)
-- Minimal and fast
+## ⚠️ Prerequisites
 
-## Installation
+This script is **Linux-only** and requires the `lm-sensors` package to be installed and configured on your system. It will not run on Windows or macOS.
 
-Clone the repository:
-git clone https://github.com/KrayTik/heat-monitor.git
+Before using `heat-monitor`, ensure you have:
 
-cd heat-monitor
+1.  **Linux Operating System:** Running a distribution like Ubuntu, Debian, Fedora, Arch Linux, etc.
+2.  **`lm-sensors` installed:** This package provides the `sensors` command that `heat-monitor` uses internally.
+3.  **`lm-sensors` configured:** You need to run `sensors-detect` at least once to identify your system's sensors.
 
-chmod +x heat-monitor.py
+## 📦 Installation
 
-Install lm-sensors if it's not already installed:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/KrayTik/heat-monitor.git](https://github.com/KrayTik/heat-monitor.git)
+    ```
 
-# Debian/Ubuntu
-sudo apt install lm-sensors
+2.  **Navigate into the project directory:**
+    ```bash
+    cd heat-monitor
+    ```
 
-# Arch-based
-sudo pacman -S lm_sensors
+3.  **Make the script executable:**
+    ```bash
+    chmod +x heat-monitor.py
+    ```
 
-Run sensor detection:
+4.  **Install `lm-sensors` (if you haven't already):**
 
-sudo sensors-detect
+    * **Debian/Ubuntu:**
+        ```bash
+        sudo apt update
+        sudo apt install lm-sensors
+        ```
 
-Follow the prompts and confirm with "yes" when needed.
-# Usage
+    * **Arch-based (Arch Linux, Manjaro, etc.):**
+        ```bash
+        sudo pacman -S lm_sensors
+        ```
 
-Run the script:
+    * **Fedora:**
+        ```bash
+        sudo dnf install lm_sensors
+        ```
 
-./heat-monitor.py
+    * *For other distributions, consult your package manager documentation.*
 
-To automatically refresh every few seconds:
+5.  **Configure `lm-sensors`:** Run the sensor detection utility. Follow the on-screen prompts, typically answering "yes" to probe most buses and load modules when asked.
+    ```bash
+    sudo sensors-detect
+    ```
+    After running `sensors-detect`, you might need to restart your system or load the kernel modules manually as instructed to make the sensor data available.
 
-watch -n 5 ./heat-monitor.py
+## 🚀 Usage
 
-# License
+Navigate to the `heat-monitor` directory or add the script's location to your system's PATH.
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+* **Run once:**
+    ```bash
+    ./heat-monitor.py
+    ```
 
-# Contributing
+* **Watch and auto-refresh (e.g., every 5 seconds):**
+    ```bash
+    watch -n 5 ./heat-monitor.py
+    ```
+    This command uses the standard `watch` utility to periodically execute the script and display its output, providing a live view of temperatures. Press `Ctrl+C` to stop `watch`.
 
-If you want to improve the script or report an issue, feel free to open a pull request or file an issue.
+## 🤝 Contributing
 
+Contributions are welcome! If you have ideas for improvements, find a bug, or want to add features, please feel free to:
+
+1.  Open an issue to discuss your ideas or report problems.
+2.  Fork the repository, make your changes, and open a pull request.
+
+Please follow standard Python coding conventions and include relevant documentation or comments for your changes.
+
+## 📄 License
+
+This project is open-source and licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
-
-Let me know if you're planning to expand `heat-monitor` with logging, config files, or sensor filtering—happy to add sections for that.
