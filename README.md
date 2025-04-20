@@ -16,7 +16,7 @@ This python script can only run on Linux systems because the script is written f
 ## Installation
 
 Clone the repository:
-git clone https://github.com/geneburnn/heat-monitor.git
+git clone https://github.com/KrayTik/heat-monitor.git
 cd heat-monitor
 chmod +x heat-monitor.py
 
