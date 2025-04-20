@@ -17,7 +17,9 @@ This python script can only run on Linux systems because the script is written f
 
 Clone the repository:
 git clone https://github.com/KrayTik/heat-monitor.git
+
 cd heat-monitor
+
 chmod +x heat-monitor.py
 
 Install lm-sensors if it's not already installed:
