@@ -1,7 +1,7 @@
 # heat-monitor
 
-![Linux compatible](https://img.shields.io/badge/OS-Linux-informational?style=flat-square&logo=linux)
-![Python](https://img.shields.io/badge/Language-Python-blue?style=flat-square&logo=python)
+[![Linux compatible](https://img.shields.io/badge/OS-Linux-informational?style=flat-square&logo=linux)](https://www.linux.org/)
+[![Python](https://img.shields.io/badge/Language-Python-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 A simple, lightweight command-line utility written in Python to display your system's temperature readings on Linux.
